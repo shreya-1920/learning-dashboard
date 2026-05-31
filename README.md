@@ -8,17 +8,12 @@ EduDash helps students track course progress, monitor learning activity, and vis
 
 ## 🚀 Live Demo
 
-Add your deployed Vercel link here:
-
-```text
-https://your-vercel-link.vercel.app
-```
+https://learning-dashboard-murex.vercel.app/
 
 ---
 
 ## 📂 GitHub Repository
 
-Add your repository link here:
 
 ```text
 https://github.com/shreya-1920/learning-dashboard
@@ -61,17 +56,13 @@ https://github.com/shreya-1920/learning-dashboard
 
 * Vercel
 
----
+https://learning-dashboard-murex.vercel.app/
 
 ## 📸 Screenshots
 
 ### Dashboard
 
-Add screenshot here after deployment.
-
-```text
-public/dashboard-preview.png
-```
+![EduDash Dashboard](public/dashboard-preview.png)
 
 ---
 
@@ -80,8 +71,8 @@ public/dashboard-preview.png
 Create a `.env.local` file in the project root and add:
 
 ```env
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
 ```
 
 A sample file is included as:
