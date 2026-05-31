@@ -9,13 +9,25 @@ export default function MotionCard({
 }) {
   return (
     <motion.div
-      whileHover={{
-        scale: 1.02,
+      initial={{
+        opacity: 0,
+        y: 30,
       }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{ once: true }}
       transition={{
-        type: "spring",
-        stiffness: 300,
-        damping: 20,
+        duration: 0.5,
+        ease: "easeOut",
+      }}
+      whileHover={{
+        scale: 1.03,
+        y: -8,
+      }}
+      whileTap={{
+        scale: 0.98,
       }}
     >
       {children}

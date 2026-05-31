@@ -11,7 +11,11 @@ export default async function Home() {
     .select("*");
 
   if (error) {
-    return <h1>Error loading courses</h1>;
+    return (
+      <main className="min-h-screen flex items-center justify-center bg-black text-white">
+        <h1>Error loading courses</h1>
+      </main>
+    );
   }
 
   const totalCourses = courses?.length || 0;
@@ -27,13 +31,15 @@ export default async function Home() {
       : 0;
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-black via-zinc-950 to-black text-white p-6">
-      <div className="grid lg:grid-cols-4 gap-6">
+    <main className="min-h-screen bg-gradient-to-br from-black via-zinc-950 to-black text-white p-4 md:p-6">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
 
+        {/* Sidebar */}
         <div className="lg:col-span-1">
           <Sidebar />
         </div>
 
+        {/* Main Content */}
         <div className="lg:col-span-3 space-y-6">
 
           <HeroTile
@@ -41,7 +47,7 @@ export default async function Home() {
             averageProgress={averageProgress}
           />
 
-          <section className="grid md:grid-cols-2 gap-4">
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {courses?.map((course) => (
               <CourseCard
                 key={course.id}
