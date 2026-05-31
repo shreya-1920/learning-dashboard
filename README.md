@@ -159,6 +159,27 @@ learning-dashboard/
 * Environment Configuration
 
 ---
+## Architecture Decisions
+
+The application is built using Next.js App Router and follows a component-based architecture. The dashboard is divided into reusable UI components such as Sidebar, HeroTile, CourseCard, and ActivityTile to improve maintainability and code organization.
+
+Supabase is used as the backend database for storing course information and progress data. The application fetches data directly from Supabase and displays it in a responsive dashboard interface.
+
+## Server and Client Component Split
+
+The main page (`page.tsx`) is implemented as a Server Component. Data is fetched from Supabase on the server before rendering, reducing client-side work and improving performance.
+
+Interactive UI components such as animations and hover effects use Client Components. Components that rely on Framer Motion, including MotionCard, HeroTile animations, and ActivityTile animations, are marked with `"use client"` to enable client-side interactivity.
+
+This approach keeps data fetching on the server while limiting client-side JavaScript to only the parts that require user interaction.
+
+## Challenges Faced
+
+One challenge was designing a responsive layout that works well across desktop and mobile devices. This was solved using Tailwind CSS responsive utilities and conditional layouts.
+
+Another challenge was balancing Server Components and Client Components when integrating Framer Motion. The solution was to keep data fetching in Server Components while isolating animations into dedicated Client Components.
+
+Additional effort was spent improving the user interface with custom animations, responsive navigation, gradient styling, and visually distinct course cards to create a modern dashboard experience.
 
 ## 👩‍💻 Author
 
